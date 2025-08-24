@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book an Appointment | Barber</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="main.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+  <!-- Booking Form -->
+  <div id="bookingSection" class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">Book an Appointment</h1>
+    <form id="bookingForm" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" id="name" required class="w-full p-2 border border-gray-300 rounded-lg" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" id="email" required class="w-full p-2 border border-gray-300 rounded-lg" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Phone</label>
+        <input type="tel" id="phone" required class="w-full p-2 border border-gray-300 rounded-lg" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Service</label>
+        <select id="service" required class="w-full p-2 border border-gray-300 rounded-lg">
+          <option value="">Select a service</option>
+          <option value="haircut">Haircut</option>
+          <option value="beard-trim">Beard Trim</option>
+          <option value="combo">Haircut + Beard Trim</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Date</label>
+        <input type="date" id="date" required class="w-full p-2 border border-gray-300 rounded-lg" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Available Times</label>
+        <select id="time" required class="w-full p-2 border border-gray-300 rounded-lg">
+          <option value="">Select a time</option>
+          <!-- dynamically loaded options -->
+        </select>
+      </div>
+
+      <button type="submit" class="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition">Book Now</button>
+    </form>
+    <div id="confirmation" class="mt-4 text-center text-green-600 font-semibold hidden">
+      Appointment successfully booked!
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin Dashboard | Barber</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script defer src="main-admin.js"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold text-center mb-6">Admin Dashboard</h1>
+
+    <!-- Availability Form -->
+    <section class="bg-white p-6 rounded-xl shadow mb-8">
+      <h2 class="text-xl font-semibold mb-4">Set Available Times</h2>
+      <form id="availabilityForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label for="availableDate" class="block text-sm font-medium text-gray-700 mb-1">Date</label>
+          <input type="date" id="availableDate" required class="w-full p-2 border border-gray-300 rounded-lg" />
+        </div>
+        <div>
+          <label for="availableTimes" class="block text-sm font-medium text-gray-700 mb-1">Available Times (comma separated)</label>
+          <input
+            type="text"
+            id="availableTimes"
+            placeholder="e.g. 10:00, 11:00, 12:30"
+            required
+            class="w-full p-2 border border-gray-300 rounded-lg"
+          />
+        </div>
+        <div class="md:col-span-2">
+          <button
+            type="submit"
+            class="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-800 transition"
+          >
+            Add Availability
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Appointments Table -->
+    <section class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-xl font-semibold mb-4">Upcoming Appointments</h2>
+      <table id="appointmentsTable" class="min-w-full table-auto border-collapse border border-gray-300">
+        <thead>
+          <tr>
+            <th class="border border-gray-300 px-4 py-2 text-left">Name</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Service</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Date</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Time</th>
+            <th class="border border-gray-300 px-4 py-2 text-left">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Appointment rows injected here by main-admin.js -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+</body>
+</html>
